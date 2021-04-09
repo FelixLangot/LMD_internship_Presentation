@@ -1,0 +1,79 @@
+\documentclass[10pt]{beamer}
+
+\usetheme[progressbar=frametitle]{metropolis}
+\usepackage{appendixnumberbeamer}
+
+\usepackage{booktabs}
+\usepackage[scale=2]{ccicons}
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{dateplot}
+
+\usepackage{xspace}
+\newcommand{\themename}{\textbf{\textsc{metropolis}}\xspace}
+
+\usepackage{caption}
+%\usepackage{gensymb}
+\usepackage{ulem}
+\usepackage{subcaption}
+\usepackage[french]{babel}
+
+\DeclareCaptionLabelFormat{underlcap}{\uline{#1 #2}}
+\DeclareCaptionLabelSeparator{underlcap}{~}
+\DeclareCaptionTextFormat{underlcap}{\expandafter\uline\expandafter{\expandafter#1}}
+
+\captionsetup[figure]{%
+   labelformat=underlcap,labelseparator=underlcap,textformat=underlcap}
+   
+\newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+
+\makeatletter
+\setlength{\metropolis@progressinheadfoot@linewidth}{1.7pt}
+\setlength{\metropolis@titleseparator@linewidth}{1.7pt}
+\setlength{\metropolis@progressonsectionpage@linewidth}{1.7pt}
+
+\definecolor{alizarin}{rgb}{0.1, 0.26, 0.82}
+\definecolor{bazaar}{rgb}{0.63, 0.63, 0.8}
+
+\setbeamercolor{progress bar}{fg=alizarin,bg=bazaar}
+
+\AtBeginSection[]{
+  \begin{frame}
+  \vfill
+  \centering
+  \begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+    \usebeamerfont{title}\insertsectionhead\par%
+  \end{beamercolorbox}
+  \vfill
+  \end{frame}
+}
+
+
+\title{Impact de l'organisation de la convection sur l'humidité troposphérique}
+\subtitle{Félix Langot}
+\date{\today}
+\author{\textit{LMD - UVSQ/Paris-Saclay}}
+\institute{}
+%\titlegraphic{\hfill\includegraphics[height=1.5cm]{logo.png}}
+
+\begin{document}
+
+\maketitle
+
+\section*{1}
+\begin{frame}{Section 1}
+    
+\end{frame}
+
+\section*{2}
+\begin{frame}{Section 2}
+    
+\end{frame}
+
+\end{document}
