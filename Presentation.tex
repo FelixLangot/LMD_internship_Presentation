@@ -58,7 +58,7 @@
 
 \addbibresource{/Applications/ZoteroBibs/Library.bib}
 
-\title{Prédire l'humidité troposphérique en fonction de l'aggrégation de la convection et de l'ascendance}
+\title{Prédire l'humidité troposphérique en fonction de l'organisation de la convection et de la circulation de grande échelle}
 \subtitle{Félix Langot}
 \date{\today}
 \author{\textit{LMD - UVSQ/Paris-Saclay}}
@@ -72,12 +72,50 @@
 \begin{frame}{\secname}
 
     \begin{itemize}
+        \item \textbf{But du stage:} développer un modèle théorique simple pour quantifier l'effet de l'organisation de la convection et de la circulation de grande échelle sur l'humidité de la troposphère 
+        \item Utilisation de simulations CRMs $\rightarrow$ vérifier les hypothèses du modèle + évaluer son réalisme. 
         \item Différentes distributions de l'humidité relative (RH) dans la troposphère, dues à: \\
-        $\rightarrow$ l'aggrégation de la convection \\
-        $\rightarrow$ l'ascendance
-        \item L'aggrégation fait baisser la RH 
-        \item L'ascendance humidifie la troposphère
-        \item Vérifié avec le CRM SAM, avec lequel on peut calculer la RH réelle d'une parcelle troposphérique sur un domaine de 95x95 km
+        $\rightarrow$ l'agrégation de la convection: fait baisser la RH  \\
+        $\rightarrow$ l'ascendance: humidifie la troposphère \\
+        \autocite{Tobin2012}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{\secname}
+    \begin{itemize}
+        \item \textbf{Cloud-Resolving  Model  (CRM):} Permet de simuler des nuages convectifs avec une résolution allant de la dizaine de mètre à plusieurs kilomètres sur un espace limité en 4D (temps+espace).
+        \item \textbf{Simulation en équilibre radiatif-convectif (RCE):} 
+        \begin{itemize}
+            \item Simulation avec une boîte doublement périodique, typiquement utilisé pour étudier le climat tropical
+            \item Fixation de la température de surface + saturation de l'air à la surface comme c'est le cas au-dessus de l'océan. 
+            \item Inclusion de l'énergie solaire qui évapore l'eau. 
+            \item Redistribution de l'énergie par les équations de la mécanique des fluides, les radiation et la thermodynamique qui génèrent un cycle hydrologique avec des précipitations pour équilibrer l'évaporation.
+        \end{itemize}
+    \end{itemize}
+\end{frame}
+
+\begin{frame}{\secname}
+    \begin{itemize}
+        \item \textbf{Pourquoi et comment représenter la circulation de grande-échelle:} 
+        \begin{itemize}
+            \item Impacte l'humidité de l'atmosphère par advection mais aussi l'organisation de la convection \autocite{dufauxRapportStageLicence2021}, qui à son tour modifie la RH. 
+            \item Représenter l’ascendance de grande échelle $\rightarrow$ ajout d'un terme d’advection verticale d’humidité et de température.
+        \end{itemize}
+        \item \textbf{Obtention de différents types d'organisation:} On ajoute au RCE un forçage différent en fonction du type d'organisation que l'on veut favoriser
+        \begin{itemize}
+            \item Cumulonimbus isolés: RCE
+            \item Cyclones: RCE + Coriolis
+            \item Ligne de grain: RCE + cisaillement de vent
+        \end{itemize}
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}{\secname}
+
+    \begin{itemize}
+        \item Effets vérifiés par le CRM SAM, avec lequel on peut calculer la RH simulée d'une parcelle troposphérique sur un domaine de 95x95 km
         $$
         RH_{actual} = \left.\frac{q_v}{q_{sat}}\right|_{z_{parcel}=5km}
         $$
@@ -221,7 +259,7 @@
     \end{figure}
 \end{frame}
 
-\begin{frame}{Bibliographie}
+\begin{frame}[allowframebreaks]{Bibliographie}
     \printbibliography
 \end{frame}
 
