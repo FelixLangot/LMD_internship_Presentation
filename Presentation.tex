@@ -146,16 +146,19 @@
 \end{frame}
 
 \begin{frame}{\secname}
-    $\rightarrow$ L'humidité spécifique d'une parcelle $q_v$ reste constante en l'absence de saturation (et donc de condensation) \\ \vspace{1cm}
-    $\rightarrow$ On dispose de l'humidité spécifique de saturation $q_{sat}$ en fonction de l'altitude grâce au modèle SAM  \\ \vspace{1cm}
+    $\rightarrow$ L'humidité spécifique d'une parcelle $q_v$ reste constante en l'absence de saturation (et donc de condensation) \\ \vspace{0.2cm}
+    $\rightarrow$ On dispose de l'humidité spécifique de saturation $q_{sat}$ en fonction de l'altitude grâce au modèle SAM  \\ \vspace{0.2cm}
     $\rightarrow$ On peut donc prédire la RH de la troposphère à partir de l'altitude de dernière saturation de la parcelle
+    \begin{figure}[hbtp]
+        \centering
+        \includegraphics[width=6cm]{Figures/lsadraw.png}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{\secname}
     Comment le modèle met en évidence les relations entre la RH et la circulation de grande échelle/l'organisation de la convection? \\ \vspace{1cm}
-    $\rightarrow$ L'ascendance modifie la vitesse de subsidence de l'environnment, donc modifie le temps de descente de la parcelle. Si temps de descente augmente, la probabilité de rencontrer un nuage augmente. \\ \vspace{1cm}
-    $\rightarrow$ L'organisation joue sur la distribution des nuages, donc sur la probabilité d'en rencontrer un. Si les nuages sont très regroupés, la probabilité d'en rencontrer sur tout le domaine baisse. \\ 
-    Pour expliquer ça, ça serait utile de citer Sherwood 2006 et ses 2 échelles de temps.
+    $\rightarrow$ Ascendance $\rightarrow$ vitesse de subsidence de l'environnment $\rightarrow$ temps de descente de la parcelle. Si temps de descente augmente, la probabilité de rencontrer un nuage augmente. \\ \vspace{1cm}
+    $\rightarrow$ Organisation $\rightarrow$ distribution des nuages $\rightarrow$ probabilité de rencontre. Nuages sont très regroupés = baisse de la probabilité
 \end{frame}
 
 \section*{Altitude de dernière saturation - Approche statique}
@@ -200,7 +203,7 @@
             \centering
             \includegraphics[width=12cm]{../Codes/Figs/RhvsRHp.png}
         \end{figure}
-    $\rightarrow$ La RH ne peut pas être prédite par un modèle statique.
+    $\rightarrow$ La RH ne peut pas être prédite par un modèle statique, l'intermittence des nuages et le mouvement de la parcelle sont importants.
         }
 \end{frame}
 
@@ -224,11 +227,6 @@
 \end{frame}
 
 \begin{frame}{\secname}
-    \centering
-    \includegraphics[width=9cm]{../Codes/Figs/wenvz.png}
-\end{frame}
-
-\begin{frame}{\secname}
     Simulations avec ascendance: vitesse verticale totale dans l'environnement $w_{tot} = w_{env} + w_{LS}$, où $w_{LS}$ est l'ascendance imposée. \\
     Vitesse totale des parcelles dans l'environnement:
     
@@ -241,19 +239,8 @@
 \begin{frame}{\secname}
     \begin{itemize}
         \item On se concentre premièrement sur la simulation de cumulonimbus sans ascendance
-        \item Le pas de temps est réduit à 30min
-        \item Le profil de vitesse est le suivant
-    \end{itemize}
-    \begin{figure}[hbtp]
-        \centering
-        \includegraphics[width=8.5cm]{../Codes/Figs2/wmu.png}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{\secname}
-    \begin{itemize}
         \item On choisit 10 parcelles étant à l'altitude $z_{parcel}$ aux 10 derniers pas de temps. 
-        \item On remonte le temps et on trace la trajectoire de la parcelle, gouvernée par $w_{\mu}$.
+        \item On remonte le temps et on trace la trajectoire de la parcelle, gouvernée par $w_{tot}$.
     \end{itemize}
     \begin{figure}[hbtp]
         \centering
@@ -262,13 +249,10 @@
 \end{frame}
 
 \begin{frame}{\secname}
-    \begin{itemize}
-        \item La trajectoire est discrétisée pour correspondre aux altitudes du modèle et ainsi permettre d'associer des valeurs $q$ à chaque altitude traversée par la parcelle. 
-        \item La trajectoire discrétisée sous-estime systématiquement l'altitude de la parcelle
-    \end{itemize}
+    En utilisant les mêmes conditions pour détecter les nuages, on obtient les altitudes de dernières saturations suivantes:
     \begin{figure}[hbtp]
         \centering
-        \includegraphics[width=8cm]{../Codes/Figs2/Discrete_traj.png}
+        \includegraphics[width=10cm]{../Codes/Figs2/zclouds_traj.png}
     \end{figure}
 \end{frame}
 
