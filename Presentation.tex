@@ -72,6 +72,7 @@
 \begin{frame}{\secname}
 
     \begin{itemize}
+        \setlength{\itemsep}{7pt}
         \item \textbf{But du stage:} développer un modèle théorique simple pour quantifier l'effet de l'organisation de la convection et de la circulation de grande échelle sur l'humidité de la troposphère 
         \item Utilisation de simulations CRMs $\rightarrow$ vérifier les hypothèses du modèle + évaluer son réalisme. 
         \item Différentes distributions de l'humidité relative (RH) dans la troposphère, dues à: \\
@@ -84,97 +85,85 @@
 
 \begin{frame}{\secname}
     \begin{itemize}
-        \item \textbf{Cloud-Resolving  Model  (CRM):} Permet de simuler des nuages convectifs avec une résolution allant de la dizaine de mètre à plusieurs kilomètres sur un espace limité en 4D (temps+espace).
-        \item \textbf{Simulation en équilibre radiatif-convectif (RCE):} 
-        \begin{itemize}
-            \item Simulation avec une boîte doublement périodique, typiquement utilisé pour étudier le climat tropical
-            \item Fixation de la température de surface + saturation de l'air à la surface comme c'est le cas au-dessus de l'océan. 
-            \item Inclusion de l'énergie solaire qui évapore l'eau. 
-            \item Redistribution de l'énergie par les équations de la mécanique des fluides, les radiation et la thermodynamique qui génèrent un cycle hydrologique avec des précipitations pour équilibrer l'évaporation.
-        \end{itemize}
+        \item \textbf{Simulation en équilibre radiatif-convectif (RCE) sur Cloud-Resolving  Model  (CRM):}
     \end{itemize}
+    \begin{figure}[hbtp]
+        \centering
+        \includegraphics[width=6.2cm]{Figures/CRM.png}    
+    \end{figure}
 \end{frame}
 
 \begin{frame}{\secname}
+\Wider{
     \begin{itemize}
+        \setlength{\itemsep}{5pt}
         \item \textbf{Pourquoi et comment représenter la circulation de grande-échelle:} 
         \begin{itemize}
+            \setlength{\itemsep}{5pt}
             \item Impacte l'humidité de l'atmosphère par advection mais aussi l'organisation de la convection \autocite{dufauxRapportStageLicence2021}, qui à son tour modifie la RH. 
             \item Représenter l’ascendance de grande échelle $\rightarrow$ ajout d'un terme d’advection verticale d’humidité et de température.
         \end{itemize}
-        \item \textbf{Obtention de différents types d'organisation:} On ajoute au RCE un forçage différent en fonction du type d'organisation que l'on veut favoriser
-        \begin{itemize}
-            \item Cumulonimbus isolés: RCE
-            \item Cyclones: RCE + Coriolis
-            \item Ligne de grain: RCE + cisaillement de vent
-        \end{itemize}
     \end{itemize}
+}
+\end{frame}
 
+\begin{frame}
+    \begin{itemize}
+        \item \textbf{Obtention de différents types d'organisation:} On ajoute au RCE un forçage différent en fonction du type d'organisation que l'on veut favoriser
+    \end{itemize}
+    \begin{figure}[hbtp]
+        \centering
+        \includegraphics[width=11cm]{Figures/DufauxTable.png}
+    \end{figure}
 \end{frame}
 
 \begin{frame}{\secname}
-
+\begin{columns}
+    \column{0.4\textwidth}
     \begin{itemize}
-        \item Effets vérifiés par le CRM SAM, avec lequel on peut calculer la RH simulée d'une parcelle troposphérique sur un domaine de 95x95 km
+        \item Effets vérifiés par le CRM SAM, avec lequel on calcule l'humidité
         $$
         RH_{actual} = \left.\frac{q_v}{q_{sat}}\right|_{z_{parcel}=5km}
         $$
-        avec $q_v$ l'humidité spécifique et $q_{sat}$ l'humidité spécifique de saturation, en g/kg.
     \end{itemize}
-
-\end{frame}
-
-\begin{frame}{\secname}
-    
+    \column{0.6\textwidth}
     \begin{figure}
         \centering
-        \includegraphics[width=9cm]{../Codes/Figs/RHaProbsSuperposition.png}
-        \label{RHactual}
+        \includegraphics[width=7cm]{../Codes/Figs/RHaProbsSuperposition.png}
+        \label{RHactual0}
     \end{figure}
-
+\end{columns}
 \end{frame}
 
 \section*{Comment prédire les distributions de \textit{RH}?}
 \begin{frame}{\secname}
      \begin{itemize}
-         \item Pour tenter de prédire les distributions de RH, on utilise le modèle d'advection-condensation \autocite{pierrehumbertRelativeHumidityAtmosphere2007,Vallis2017}
+         \item Pour prédire les distributions de RH, on utilise le modèle d'advection-condensation \autocite{pierrehumbertRelativeHumidityAtmosphere2007,Vallis2017}
      \end{itemize}
-     \begin{figure}[hbtp]
-         \centering
-         \includegraphics[width=6.6cm]{Figures/advec-condens.png}
-     \end{figure}
-\end{frame}
-
-\begin{frame}{\secname}
-    $\rightarrow$ L'humidité spécifique d'une parcelle $q_v$ reste constante en l'absence de saturation (et donc de condensation) \\ \vspace{0.2cm}
-    $\rightarrow$ On dispose de l'humidité spécifique de saturation $q_{sat}$ en fonction de l'altitude grâce au modèle SAM  \\ \vspace{0.2cm}
-    $\rightarrow$ On peut donc prédire la RH de la troposphère à partir de l'altitude de dernière saturation de la parcelle
-    \begin{figure}[hbtp]
-        \centering
-        \includegraphics[width=6cm]{Figures/lsadraw.png}
-    \end{figure}
-\end{frame}
-
-\begin{frame}{\secname}
-    Comment le modèle met en évidence les relations entre la RH et la circulation de grande échelle/l'organisation de la convection? \\ \vspace{1cm}
-    $\rightarrow$ Ascendance $\rightarrow$ vitesse de subsidence de l'environnment $\rightarrow$ temps de descente de la parcelle. Si temps de descente augmente, la probabilité de rencontrer un nuage augmente. \\ \vspace{1cm}
-    $\rightarrow$ Organisation $\rightarrow$ distribution des nuages $\rightarrow$ probabilité de rencontre. Nuages sont très regroupés = baisse de la probabilité
+     \vspace{-1cm}
+     \begin{columns}
+         \column{0.55\textwidth}
+         \begin{itemize}
+            \item Ascendance + Organisation \\ $\rightarrow$ probabilité d'humidification
+        \end{itemize}
+         \column{0.6\textwidth}
+         \begin{figure}[hbtp]
+            \centering
+            \includegraphics[width=6.6cm]{Figures/advec-condens.png}
+        \end{figure}
+     \end{columns}
 \end{frame}
 
 \section*{Altitude de dernière saturation - Approche statique}
 \begin{frame}{\secname}
-    Comment trouver l'altitude de dernière saturation d'une parcelle se situant dans la troposphère?
     \begin{itemize}
+        \setlength{\itemsep}{4pt}
         \item \textbf{Hypothèse statique:} L'altitude de dernière saturation d'une parcelle troposphérique correspond à l'altitude du nuage le plus proche au-dessus de la parcelle.
-        \item SAM: rapports de mélange d'eau et de glace (\textit{water mixing ratio, ice mixing ratio}) $q_c, q_i$ \\ 
-        $\rightarrow$ Détection des nuages
-        \begin{itemize}
-            \item Si $q_c + q_i > 10^{-6}$ alors le point de grille est dans un nuage \autocite{Risi2021}
-        \end{itemize}
+        \item SAM: $q_c + q_i > 10^{-6}$ alors le point de grille est dans un nuage \autocite{Risi2021}
     \end{itemize}
     \begin{figure}[hbtp]
         \centering
-        \includegraphics[width=5cm]{../Codes/Figs/lastsaturationlight.png}
+        \includegraphics[width=6cm]{../Codes/Figs/lastsaturationlight.png}
     \end{figure}
 \end{frame}
 
@@ -196,40 +185,34 @@
 
 \begin{frame}{\secname}
     On peut comparer la distribution obtenue avec cette méthode à la distribution réelle de la RH
-
-
     \Wider{
         \begin{figure}[hbtp]
             \centering
             \includegraphics[width=12cm]{../Codes/Figs/RhvsRHp.png}
         \end{figure}
-    $\rightarrow$ La RH ne peut pas être prédite par un modèle statique, l'intermittence des nuages et le mouvement de la parcelle sont importants.
+    $\rightarrow$ La RH ne peut pas être prédite par un modèle statique \\ 
+    $\rightarrow$ Intermittence des nuages + mouvement de la parcelle importants.
         }
 \end{frame}
 
 \section*{Altitude de dernière saturation - Approche dynamique}
 
 \begin{frame}{\secname}
-    \Wider{
-\begin{columns}
-    \column{0.4\textwidth}
-    \begin{itemize}
-        \item \textbf{Approche dynamique:} On considère le mouvement vertical d'une parcelle au-dessus de la troposphère.
-        \item SAM fournit la vitesse verticale $w$, depuis laquelle on peut déduire $w_{env}$, la vitesse en dehors des nuages. 
-    \end{itemize}
-    \column{0.7\textwidth}
+\Wider{
+\textbf{Approche dynamique:} On considère le mouvement vertical d'une parcelle au-dessus de la troposphère. L'altitude de dernière saturation d'une parcelle à 5km au pas de temps $t$ est l'altitude à laquelle elle a rencontré un nuage pour la dernière fois le long de sa trajectoire à $t-\Delta T$. 
+
     \begin{figure}[hbtp]
         \centering
         \includegraphics[width=7cm]{../Codes/Figs/lastsaturationsubsidencelight.png}
     \end{figure}
-\end{columns}
-    }
+}
 \end{frame}
 
 \begin{frame}{\secname}
-    Simulations avec ascendance: vitesse verticale totale dans l'environnement $w_{tot} = w_{env} + w_{LS}$, où $w_{LS}$ est l'ascendance imposée. \\
-    Vitesse totale des parcelles dans l'environnement:
-    
+    \begin{itemize}
+        \item SAM $\rightarrow w \rightarrow w_{env}$     
+        \item Simulations avec ascendance: $w_{tot} = w_{env} + w_{LS}$, où $w_{LS}$ est l'ascendance imposée.
+    \end{itemize} 
     \begin{figure}[hbtp]
         \centering
         \includegraphics[width=7cm]{../Codes/Figs/wtotz.png}
@@ -238,9 +221,7 @@
 
 \begin{frame}{\secname}
     \begin{itemize}
-        \item On se concentre premièrement sur la simulation de cumulonimbus sans ascendance
-        \item On choisit 10 parcelles étant à l'altitude $z_{parcel}$ aux 10 derniers pas de temps. 
-        \item On remonte le temps et on trace la trajectoire de la parcelle, gouvernée par $w_{tot}$.
+        \item On trace la trajectoire de la parcelle, gouvernée par $w_{tot}$.
     \end{itemize}
     \begin{figure}[hbtp]
         \centering
@@ -254,6 +235,42 @@
         \centering
         \includegraphics[width=10cm]{../Codes/Figs2/zclouds_traj.png}
     \end{figure}
+\end{frame}
+
+\section*{Résultats}
+
+\begin{frame}{\secname}
+    Et l'humidité correspondante avec 
+    $$
+    RH_p = \frac{q_{sat}(z_{clouds})}{q_{sat}(z_{parcel})}
+    $$
+    \Wider{
+    \begin{figure}[hbtp]
+        \centering
+        \includegraphics[width=12cm]{../Codes/Figs2/zcloudsvsRHp.png}
+    \end{figure}
+    }
+\end{frame}
+
+\begin{frame}{\secname}
+    On compare les distributions obtenues avec les différents calculs d'humidité
+    \Wider{
+    \begin{figure}[hbtp]
+        \centering
+        \includegraphics[width=9cm]{../Codes/Figs2/RhvsRHovsRHp.png}
+    \end{figure}
+    }
+\end{frame}
+
+\section*{Influence du pas de temps}
+
+\begin{frame}{\secname}
+
+    \begin{figure}[hbtp]
+        \centering
+        \includegraphics[width=10cm]{../Codes/Figs2/RHps.png}
+    \end{figure}
+    
 \end{frame}
 
 \begin{frame}[allowframebreaks]{Bibliographie}
