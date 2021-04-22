@@ -58,7 +58,7 @@
 
 \addbibresource{/Applications/ZoteroBibs/Library.bib}
 
-\title{Prédire l'humidité troposphérique en fonction de l'organisation de la convection et de la circulation de grande échelle}
+\title{Comprendre la distribution de l'humidité troposphérique en fonction de l'organisation de la convection et de la circulation de grande échelle}
 \subtitle{Félix Langot}
 \date{\today}
 \author{\textit{LMD - UVSQ/Paris-Saclay}}
@@ -74,11 +74,10 @@
     \begin{itemize}
         \setlength{\itemsep}{7pt}
         \item \textbf{But du stage:} développer un modèle théorique simple pour quantifier l'effet de l'organisation de la convection et de la circulation de grande échelle sur l'humidité de la troposphère 
-        \item Utilisation de simulations CRMs $\rightarrow$ vérifier les hypothèses du modèle + évaluer son réalisme. 
+        \item Utilisation de simulations CRMs $\rightarrow$ vérifier les hypothèses du modèle simple + évaluer son réalisme. 
         \item Différentes distributions de l'humidité relative (RH) dans la troposphère, dues à: \\
-        $\rightarrow$ l'agrégation de la convection: fait baisser la RH  \\
-        $\rightarrow$ l'ascendance: humidifie la troposphère \\
-        \autocite{Tobin2012}
+        $\rightarrow$ l'agrégation de la convection: fait baisser la RH  \autocite{Tobin2012} \\
+        $\rightarrow$ l'ascendance: humidifie la troposphère \autocite{dufauxRapportStageLicence2021} \\
     \end{itemize}
 
 \end{frame}
@@ -91,20 +90,6 @@
         \centering
         \includegraphics[width=6.2cm]{Figures/CRM.png}    
     \end{figure}
-\end{frame}
-
-\begin{frame}{\secname}
-\Wider{
-    \begin{itemize}
-        \setlength{\itemsep}{5pt}
-        \item \textbf{Pourquoi et comment représenter la circulation de grande-échelle:} 
-        \begin{itemize}
-            \setlength{\itemsep}{5pt}
-            \item Impacte l'humidité de l'atmosphère par advection mais aussi l'organisation de la convection \autocite{dufauxRapportStageLicence2021}, qui à son tour modifie la RH. 
-            \item Représenter l’ascendance de grande échelle $\rightarrow$ ajout d'un terme d’advection verticale d’humidité et de température.
-        \end{itemize}
-    \end{itemize}
-}
 \end{frame}
 
 \begin{frame}
@@ -164,7 +149,7 @@
     \end{itemize}
     \begin{figure}[hbtp]
         \centering
-        \includegraphics[width=6cm]{../Codes/Figs/lastsaturationlight.png}
+        \includegraphics[width=10cm]{../Codes/Figs/lastsaturationlight.png}
     \end{figure}
 \end{frame}
 
@@ -174,14 +159,6 @@
         \centering
         \includegraphics[width=10cm]{../Codes/Figs/3Dclouds.png}
     \end{figure}
-\end{frame}
-
-\begin{frame}{\secname}
-    L'humidité relative prédite RH$_p$ peut ensuite être calculée en fonction de $q_{sat}$ seulement:
-    $$
-    RH_p = \frac{q_{sat}(z_{clouds})}{q_{sat}(z_{parcel})}
-    $$
-    où $z_{clouds}$ est l'altitude des nuages les plus proches de la troposphère au-dessus des points de grille à $z_{parcel} = 5km$, l'altitude choisie dans la troposphère
 \end{frame}
 
 \begin{frame}{\secname}
@@ -211,7 +188,7 @@
 
 \begin{frame}{\secname}
     \begin{itemize}
-        \item SAM $\rightarrow w \rightarrow w_{env}$     
+        \item SAM $\rightarrow w(t,x,y,z) \rightarrow w_{env}(z)$     
         \item Simulations avec ascendance: $w_{tot} = w_{env} + w_{LS}$, où $w_{LS}$ est l'ascendance imposée.
     \end{itemize} 
     \begin{figure}[hbtp]
@@ -222,6 +199,7 @@
 
 \begin{frame}{\secname}
     \begin{itemize}
+        \item Le pas de temps est réduit à 30min
         \item On trace la trajectoire de la parcelle, gouvernée par $w_{tot}$.
     \end{itemize}
     \begin{figure}[hbtp]
@@ -239,19 +217,6 @@
 \end{frame}
 
 \section*{Résultats}
-
-\begin{frame}{\secname}
-    Et l'humidité correspondante avec 
-    $$
-    RH_p = \frac{q_{sat}(z_{clouds})}{q_{sat}(z_{parcel})}
-    $$
-    \Wider{
-    \begin{figure}[hbtp]
-        \centering
-        \includegraphics[width=12cm]{../Codes/Figs2/zcloudsvsRHp.png}
-    \end{figure}
-    }
-\end{frame}
 
 \begin{frame}{\secname}
     On compare les distributions obtenues avec les différents calculs d'humidité
@@ -281,6 +246,27 @@
     \end{figure}
 \end{frame}
 
+\section*{Perspectives}
+\begin{frame}{\secname}
+\Wider{
+\begin{itemize}
+    \item Convergence: $\rightarrow$ Réduction du pas de temps \\
+~~~~~~~~~~~~~~~~~~~~~~ $\rightarrow$ Cas de convection + organisée
+    \item RH sous-estimée: Pourquoi? Comment corriger? \\
+        On ne considère pas:
+    \begin{itemize}
+        \item Les mouvements horizontaux $\rightarrow$ diminution de la probabilité de rencontrer un nuage
+        \item L'évaporation des hydrométéores \\ 
+    \end{itemize}
+~~~~ + Trajectoire discrétisée \\
+    $\rightarrow$ Considérer une frange d'humidification autour des nuages ? \\
+    \begin{itemize}
+        \item Probabilité fixe sur une certaine distance/exponentielle décroissante avec la distance au nuage?
+    \end{itemize}
+    \item Prédire la RH avec quelques paramètres d'agrégation?
+\end{itemize} 
+}
+\end{frame}
 % \begin{frame}[allowframebreaks]{Bibliographie}
 %     \printbibliography
 % \end{frame}
