@@ -1,4 +1,4 @@
-\documentclass[10pt]{beamer}
+\documentclass[9pt]{beamer}
 
 \usetheme[progressbar=frametitle]{metropolis}
 \usepackage{appendixnumberbeamer}
@@ -19,6 +19,8 @@
 \usepackage[french]{babel}
 \usepackage{csquotes}
 \usepackage[backend=biber,style=authoryear,citestyle=authoryear]{biblatex}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 
 \DeclareCaptionLabelFormat{underlcap}{\uline{#1 #2}}
 \DeclareCaptionLabelSeparator{underlcap}{~}
@@ -58,31 +60,52 @@
 
 \addbibresource{/Applications/ZoteroBibs/Library.bib}
 
-\title{Concours de l'école doctorale des Sciences de l'Environnement}
-\subtitle{Candidat: Félix Langot}
-\date{\today}
-\author{\textit{UVSQ/Paris-Saclay - University of Bristol}}
-\institute{}
-% \titlegraphic{\vfill\includegraphics[height=1.5cm]{Figures/logo.png}}
 \begin{document}
 
-\maketitle
+\title{Concours de l'école doctorale des Sciences de l'Environnement}
+\subtitle{Sujet: Étude de la morphologie des nuages de couche limite et de leur rôle sur la sensibilité climatique \\ ~\\
+\textit{Proposé par Florent Brient et Sandrine Bony}}
+\date{\today}
+\author{\textbf{Félix Langot}}
+\institute{\includegraphics[width=3.6cm]{/Users/felixlangot/Pictures/Icons/university-of-bristol-2.png}\hfill\includegraphics[width=3.9cm]{Figures/LMDSorbonne.png}\hfill\includegraphics[width=2.7cm]{/Users/felixlangot/Pictures/Icons/logo-uvsq-2020-actu.png}}
+%\titlegraphic{\includegraphics[height=1.5cm]{Figures/logo.png}}
+{\usebackgroundtemplate{\tikz\node[opacity=0.1]{\includegraphics[width=\paperwidth]{Figures/Flowers.jpeg}};}
+\begin{frame}
+  \maketitle
+\end{frame}
+}
+
+% \begin{frame}
+%   \maketitle
+%   \begin{tikzpicture}[overlay, remember picture]
+%   \node[above right=1cm and .8cm of current page.south west] {\includegraphics[width=2cm]{Figures/logo.png}};
+%   \node[above =1cm of current page.south] {\includegraphics[width=2cm]{Figures/logo.png}};
+%   \node[above left=1cm and .8cm of current page.south east] {\includegraphics[width=2cm]{Figures/logo.png}};
+%   \end{tikzpicture}
+%   \end{frame}
+%   \end{document}
 
 \section*{Présentation du cursus}
 \begin{frame}{\secname}
 \Wider{
-\textbf{Baccalauréat S (2016):} 
+\textbf{Baccalauréat S, (2016):} 
   \begin{itemize}
       \item mention TB, mention européenne, spécialité mathématiques.
       \item 17.5 de moyenne générale dont 19/20 en mathématiques et 17/20 en physique
   \end{itemize} 
-\textbf{MSci Physics with Astrophysics (2020):} 
+\vspace{0.15cm}
+\textbf{MSci Physics with Astrophysics, Bristol, UK (2020):} ~~~~~~~~~~\includegraphics[width=2cm]{/Users/felixlangot/Pictures/Icons/university-of-bristol-2.png} 
   \begin{itemize}
-      \item Obtention du master avec 'Upper second class honours' (mention bien)
+      \item Obtention du master avec 'Upper second class honours' (mention B)
       \item 'commendation' pour le projet final de master (note > 16)
-      \item Passage de plusieurs unités avec des notes '1st class' (mention très bien) dont l'unité \textit{Geophysical Fluid Dynamics}
+      \item Passage de plusieurs unités avec des notes '1st class' (mention TB) y compris dans l'UE \textit{Geophysical Fluid Dynamics}
   \end{itemize}
-\textbf{Master ECLAT (2021):} 
+  \vspace{0.3cm}
+  \begin{tikzpicture}[overlay, remember picture]
+    \node[above left=1.7cm and .8cm of current page.south east] {\includegraphics[width=1.7cm]{/Users/felixlangot/Pictures/Icons/logo-uvsq-2020-actu.png}};
+    \node[above left=0.8cm and .8cm of current page.south east] {\includegraphics[width=2.5cm]{Figures/LMDSorbonne.png}};
+  \end{tikzpicture}
+\textbf{Master Étude des Climats de la Terre, Paris, FR (2021):}
   \begin{itemize}
       \item Moyenne du premier semestre de 15.4/20
       \item 18/20 de moyenne dans les U.E. de modélisation
@@ -90,34 +113,32 @@
 }
 \end{frame}
 
-\section*{Expérience de recherche}
+\section*{Expériences de recherche}
 \begin{frame}{\secname}
-\Wider{  
+\begin{tikzpicture}[overlay, remember picture]
+\node[above =0cm of current page.south]
+{\includegraphics[width=12cm]{Figures/VisAssemble2.png}};
+\end{tikzpicture}
+\Wider{ 
+  \vspace{-4cm} 
   \begin{columns}
-  \column{0.7\textwidth}
-    \textbf{MSci Physics with Astrophysics:} 
+  \column{0.6\textwidth}
+    \textbf{~~~~~~~MSci Project} (avec Dr. B. Maughan): 
     \begin{itemize}
-      \item Mesure de la vitesse de l'expansion de l'Univers $H_0$ en utilisant des observations rayon X de galaxies lointaines et l'effet de Sunyaev-Zel'dovich
-      \item Simulations d'allées de tourbillons de Karman avec la méthode Lattice-Boltzmann avec parallélisation des processus
+      \item Mesure de $H_0$ en utilisant des observations rayon X d'amas de galaxies et l'effet de Sunyaev-Zel'dovich
+      \item Analyse de données, travail théorique pour interprétation
     \end{itemize}
-  \column{0.3\textwidth}
+  \column{0.5\textwidth}
     \begin{figure}[hbtp]
       \centering
-      \includegraphics[width=3.6cm]{/Users/felixlangot/Library/Mobile Documents/com~apple~CloudDocs/Work/IV. Year 4/Project/Assessed/Final Report/13491regions.png}
-\end{figure}
+      \includegraphics[width=6cm]{Figures/Logs.png}
+    \end{figure}
 \end{columns}
-\begin{columns}
-  \column{0.5\textwidth}
-  \begin{figure}[hbtp]
-    \centering
-    \includegraphics[width=5cm]{/Users/felixlangot/Library/Mobile Documents/com~apple~CloudDocs/Work/IV. Year 4/Advanced Computing/Mini-Project/Figure:Gifs/stlRe65.png}
-  \end{figure}
-  \column{0.5\textwidth}
-  \begin{figure}[hbtp]
-    \centering
-    \includegraphics[width=5.5cm]{/Users/felixlangot/Library/Mobile Documents/com~apple~CloudDocs/Work/IV. Year 4/Project/Assessed/Final Report/HubbleGraphs/Logs.eps}
-  \end{figure}
-\end{columns}
+\vspace{-0.5cm}
+\textbf{Stage de M2} (avec Dr. C. Risi):
+\begin{itemize}
+  \item Stage au LMD: Impact de l'organisation de la convection profonde sur l'humidité de la troposphère
+\end{itemize}
 }
 \end{frame}
 
@@ -126,51 +147,58 @@
 \Wider{
 \begin{columns}
   \column{0.5\textwidth}
-  \textbf{M2 ECLAT:}
   \begin{itemize}
-    \item Stage au LMD: Impact de l'organisation de la convection profonde sur l'humidité de la troposphère \\
-    $\rightarrow$ Publication des résultats prévue par Dr C. Risi
+    \item Construction + évaluation d'un modèle simple, comparaison avec CRM
+    \item Décomposition et quantification des facteurs influençant l'humidité
   \end{itemize}
   \column{0.5\textwidth}
   \hspace{-1cm}
   \begin{figure}[hbtp]
     \centering
-    \includegraphics[width=5.5cm]{/Users/felixlangot/Stage/GitRepos/Codes/Figs/meanRHpvsRHa.png}
+    \includegraphics[width=5.9cm]{Figures/meanRHpvsRHa.png}
   \end{figure}
 \end{columns}
+\vspace{-0.4cm}
 \begin{figure}[hbtp]
   \centering
-  \includegraphics[width=10cm]{/Users/felixlangot/Stage/GitRepos/Codes/Figs/AllComps.png}
+  \includegraphics[width=10.5cm]{Figures/AllComps.png}
 \end{figure}
 }
 \end{frame}
 
 \section*{Projet}
 \begin{frame}{\secname}
+\begin{tikzpicture}[overlay, remember picture]
+  \node[below =1cm of current page.north]
+  {\includegraphics[width=11.2cm]{Figures/SugGravFishFlo.png}};
+  \end{tikzpicture}
 \Wider{
+  \vspace{2.7cm}
 \textbf{Contexte:}
 \begin{itemize}
-  \item Projections climatiques incertaines, principalement à cause des nuages de couche limite
+  \item Projections climatiques incertaines principalement à cause des nuages de couche limite
 \end{itemize}
 \pause
 \textbf{But:}
 \begin{itemize}
-  \item Comprendre le rôle de l'organisation à méso-échelle de ces nuages sur leur rétroaction climatique
-  \item Établir des contraintes sur l’amplitude de la rétroaction des nuages bas
+  \item Comprendre le rôle de l'organisation de ces nuages sur leur rétroaction climatique
 \end{itemize}
 \pause
-\textbf{Moyens:}
+\textbf{Étapes:}
 \begin{itemize}
-  \item \textbf{Apprentissage automatique:} catégoriser les morphologies
-  \item \textbf{Observation satellites:} étude de la corrélation entre changements morphologiques et variations de la dynamique de couche limite
-  \item \textbf{Simulations haute-résolution:} Implémenter les processus de fine échelle.
+  \item Catégoriser les morphologies (IA)
+  \item Analyser les relations entre morphologies et environnement
+  \item Étendre l'analyse avec des modèles de haute résolution
 \end{itemize}
 }
 \end{frame}
 
-{\usebackgroundtemplate{\includegraphics[width=128mm]{./Figures/Fowers.jpeg}}
-\begin{frame}{Merci pour votre attention}
-
+{\usebackgroundtemplate{\tikz\node[opacity=0.2]{\includegraphics[width=\paperwidth]{Figures/Flowers.jpeg}};}
+\begin{frame}
+  \centering
+  \Large 
+  \textcolor{black}{Merci pour votre attention!}
 \end{frame}
 }
+
 \end{document}
