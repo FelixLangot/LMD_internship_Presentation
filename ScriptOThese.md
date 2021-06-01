@@ -29,10 +29,12 @@
 - Comprendre le rôle de l'organisation à méso-échelle de ces nuages
     sur leur rétroaction climatique: catégoriser les morphologies
     nuageuses, analyser leur sensibilité aux perturbations
-    météorologiques\
+    météorologiques
 
 $\rightarrow$ Établir des contraintes sur l'amplitude de la rétroaction
-des nuages bas **Moyens:**
+des nuages bas  
+
+**Moyens:**
 
 - Utilisation de l'apprentissage automatique pour catégoriser les
     morphologies
