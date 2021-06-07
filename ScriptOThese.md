@@ -1,48 +1,30 @@
 # Script Oral Thèse
 
-Changer titre 'sur la sen...' -> dans
-
 Slide 1: Réorienter -> fort  
 Slide 1: 'Pas prêt' -> non  
-Slide 1: Objectif note -> non  
-Slide 2: Astro -> trop long -> Ne pas parler de l'histoire -> Plus expliquer le graph -> chaque point est un amas de galaxie  
-Slide 2: Expliquer la méthode  
-Slide 2: 'Mesure de H0 ...' -> Mesure de la vitesse d'expansion de l'Univers  
-Slide 2: Ce travail m'a donné envie de faire de la recherche  
-Slide 2: +positif -> ce qu'on a appris  
-Slide 2: Convection profonde -> ok, plus expliquer l'organisation, le côté spatial.  
-Slide 2: vapeur d'eau intégré verticalement sur le domaine  
-Slide 3: Penser au lien entre le stage M2 et le sujet de thèse.  
-Slide 3: nuages on des dimensions de 2-3 km  
-Slide 3: Pourquoi interessé par cette thèse ? Au moment des étapes: machine learning, collaboration internationale  
-Slide 3: Nouveauté de regarder l'organisation pour comprendre
+Slide 1: Objectif note -> non
 
 ## Expérience de recherche
 
 - Projet final de master avec Dr. Ben Maughan
-  - Mesure de H<sub>0</sub> ...
-  - H<sub>0</sub> défition + premier calcul + implications
-  - Différences entre premier calcul et projet de master
-  - Conclusions du projet de master
+  - Mesure de H<sub>0</sub> avec méthode ...
+  - Principe d'estimation -> un échantillon d'amas avec z et D -> D mesurée grâce propriété cosmo + X-r des amas
+  - Fit les données, interval de confiance
+  - Conclusions du projet de master: on a appris que la méthode n'est pas assez précise, ce travail m'a donné envie de faire de la recherche
 
 - Stage au LMD
 
-  - Introduction types de convection **CRM!!!**
-  - Lien slide 2-3: litérature troposphère plus sèche-résultat du modèle AC
-  - Ajouter le schéma modèle AC
+  - Introduction types de convection -> Figure: vapeur d'eau intégré verticalement sur le domaine  **CRM!!!**
+  - Lien slide 2-3: litérature troposphère plus sèche -> comprendre pourquoi
   - Modèle simple: modèle de dernière saturation = on prédit l'humidité d'une parcelle à partir de l'altitude de dernière saturation
   - Comparaison avec CRM: Humidité moyenne prédite = Humidité moyenne CRM (réaliste)
-  - Expliquer assèchement de la troposphère avec organisation
-  - Bon fonctionnement du modèle = possibilité d'étudier les causes des changements d'humidité entre différentes simulations
-  - Graph du bas: Expliquer la décomposition
-  - Ex: 4ème cas
-  - Cohérence verticale -> fraction nuageuse
-  - L'assèchement est lié aux zones sèches. 
-  - Conclusion physique ?
-  - Commencer par expliquer les barres bleues
-  - Expliquer ensuite les barres grises
+  - Bon fonctionnement du modèle = possibilité d'étudier les causes des différences d'humidité
+  - Graph du bas: Commencer par expliquer les barres bleues
+  - Barres grises: propriétés spatiales des nuages, vitesse verticale sur le domaine, persistence des nuages dans le temps.
+  - Conclusion physique: On peut simuler l'assèchement troposphérique sans microphysique + Intermittence/persistance primordiale dans l'assèchement
 
-**Transition** Sujet de stage/sujet de thèse
+**Transition** Sujet de stage/sujet de thèse: Stage passé en grande partie sur le développement du modèle, envie de continuer de progresser en informatique avec apprentissage de nouvelles méthodes
+
 ## Description du projet de thèse
 
 **Contexte:**
@@ -51,26 +33,16 @@ Slide 3: Nouveauté de regarder l'organisation pour comprendre
 
 **But:**
 
-- Comprendre le rôle de l'organisation à méso-échelle de ces nuages
-    sur leur rétroaction climatique: catégoriser les morphologies
-    nuageuses, analyser leur sensibilité aux perturbations
-    météorologiques
-
-$\rightarrow$ Établir des contraintes sur l'amplitude de la rétroaction
-des nuages bas  
+- Comprendre le rôle de l'organisation à méso-échelle de ces nuages sur leur rétroaction climatique: catégoriser les morphologies nuageuses, analyser leur sensibilité aux perturbations météorologiques -> Question innovante, motivante
 
 **Moyens:**
 
-- Utilisation de l'apprentissage automatique pour catégoriser les
-    morphologies
+- Utilisation de l'apprentissage automatique pour catégoriser les morphologies -> facteur motivant: curiosité nouvelle méthode informatique, collaboration internationale
 
-- Étude de la corrélation entre changements morphologiques et
-    variations de la dynamique de couche limite par observation
-    satellites.
+- Étude de la corrélation entre changements morphologiques et variations de la dynamique de couche limite par observation satellites.
 
 - Analyse par simulations haute-résolution résolvant les processus de
     fine échelle
-
 
 ## Préparation question
 
@@ -78,3 +50,4 @@ des nuages bas
 - Détermination des pattern: méthode visuelle pour commencer, ensuite dvt de méthodes automatiques.
 - Modèles haute-résolution: SAM (utilisé au LMD, travail à commmencer de 0) ou collab avec Toulouse modèle mesoNH (travail déjà commencé pour reproduire les pattern)
 - Qu'est-ce que j'ai appris de mon expérience en angleterre?
+- Les nuages bas ont des dimensions de 2-3 km

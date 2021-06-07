@@ -5,7 +5,7 @@
 
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
-
+\usepackage{subfigure}
 \usepackage{pgfplots}
 \usepgfplotslibrary{dateplot}
 
@@ -15,7 +15,7 @@
 \usepackage{caption}
 %\usepackage{gensymb}
 \usepackage{ulem}
-\usepackage{subcaption}
+%\usepackage{subcaption}
 \usepackage[french]{babel}
 \usepackage{csquotes}
 \usepackage[backend=biber,style=authoryear,citestyle=authoryear]{biblatex}
@@ -63,7 +63,7 @@
 \begin{document}
 
 \title{Concours de l'école doctorale des Sciences de l'Environnement}
-\subtitle{Sujet: Étude de la morphologie des nuages de couche limite et de leur rôle sur la sensibilité climatique \\ ~\\
+\subtitle{Sujet: Étude de la morphologie des nuages de couche limite et de leur rôle dans la sensibilité climatique \\ ~\\
 \textit{Proposé par Florent Brient et Sandrine Bony}}
 \date{\today}
 \author{\textbf{Félix Langot}}
@@ -122,8 +122,8 @@
   \column{0.6\textwidth}
     \textbf{~~~~~~~MSci Project} (avec Dr. B. Maughan): 
     \begin{itemize}
-      \item Mesure de $H_0$ en utilisant des observations rayon X d'amas de galaxies et l'effet de Sunyaev-Zel'dovich
-      \item Analyse de données, travail théorique pour interprétation
+      \item Estimation de la vitesse d'expansion de l'Univers
+      \item Calcul des distances, analyse de données, travail théorique pour interprétation
     \end{itemize}
   \column{0.5\textwidth}
   \vspace{0.1cm}
@@ -159,14 +159,16 @@
   \vspace{-0cm}
   \begin{figure}[hbtp]
     \centering
-    \includegraphics[width=5.1cm]{/Users/felixlangot/Stage/GitRepos/Codes/Figs/meanRHpvsRHa.png}
+    \includegraphics[width=4.2cm]{Figures/advec-condens.png}
   \end{figure}
 \end{columns}
-\vspace{-0.7cm}
-\begin{figure}[hbtp]
-  \raggedright
-  \includegraphics[width=6.5cm]{/Users/felixlangot/Stage/GitRepos/Codes/Figs/OrgComps.png}
+\vspace{-0cm}
+\begin{figure}
+  \subfigure{\includegraphics[width=5.3cm]{/Users/felixlangot/Stage/GitRepos/Codes/Figs/meanRHpvsRHa.png}}
+  \hfill \hspace{-1cm}
+  \subfigure{\raggedright\includegraphics[width=5.3cm]{/Users/felixlangot/Stage/GitRepos/Codes/Figs/OrgComps.png}}
 \end{figure}
+
 }
 \end{frame}
 
@@ -207,5 +209,9 @@
   \textcolor{black}{Merci pour votre attention!}
 \end{frame}
 }
+
+\begin{frame}
+  \includegraphics[width=\textwidth]{Figures/SchémaBilan.png}
+\end{frame}
 
 \end{document}
