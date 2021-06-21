@@ -5,7 +5,7 @@ title: Prédire l'humidité troposphérique en fonction de l'organisation
   de la convection et de la circulation de grande échelle
 ---
 
-- Tic de language: 'donc' 
+- Tic de language: 'donc'
 - Opacité image
 - Dr.
 - Slide 1: préciser que je vais détailler après les simulations: 'juste illustration'
@@ -14,12 +14,12 @@ title: Prédire l'humidité troposphérique en fonction de l'organisation
 - Aggrégation + forte encouragée par SST + forte (citation)
 - +aggrégation -> assèchement (Tobin)
 - differentes organisation -> cyclone + ldg = exemple de convection regroupée = aggrégée
-- Slide 2: Montrer les éléments 
+- Slide 2: Montrer les éléments
 - Remonter les flèches rouges et bleues
 - Rajouter l'évaporation
 - Texte: Ascendance, flux solaire, décrire
 - Réaliste -> Les simulations permettent de reproduire l'assèchement en cohérence avec les obs
-- Slide 4: Montrer avec la souris 
+- Slide 4: Montrer avec la souris
 - Slide 5: unités
 - Slide 6: écrire 'Cumulonimbus'
 - Slide 7: Enlever le tableau
@@ -78,8 +78,6 @@ title: Prédire l'humidité troposphérique en fonction de l'organisation
   - Représenter l'ascendance de grande échelle $\rightarrow$ ajout d'un terme d'advection verticale d'humidité et de température.
 
   - Les simulations en RCE avec CRM sont considérées comme réalistes
-
-
 
 ### Slide 3
 
