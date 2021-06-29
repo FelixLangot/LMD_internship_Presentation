@@ -5,43 +5,13 @@ title: Prédire l'humidité troposphérique en fonction de l'organisation
   de la convection et de la circulation de grande échelle
 ---
 
-- Tic de language: 'donc'
-- Opacité image
-- Dr.
-- Slide 1: préciser que je vais détailler après les simulations: 'juste illustration'
-- Transition slide 1-2: Ce modèle s'appuie sur les simulations, le but est de reproduire les effets de l'organisation simulé dans CRM (Modèle analytique, etc..)
-- Différents types ... Citer Houze, ne pas dire à l'oral
-- Aggrégation + forte encouragée par SST + forte (citation)
-- +aggrégation -> assèchement (Tobin)
-- differentes organisation -> cyclone + ldg = exemple de convection regroupée = aggrégée
-- Slide 2: Montrer les éléments
-- Remonter les flèches rouges et bleues
-- Rajouter l'évaporation
-- Texte: Ascendance, flux solaire, décrire
-- Réaliste -> Les simulations permettent de reproduire l'assèchement en cohérence avec les obs
-- Slide 4: Montrer avec la souris
-- Slide 5: unités
-- Slide 6: écrire 'Cumulonimbus'
-- Slide 7: Enlever le tableau
-- Écrire à '5km' label
-- Slide 8: Approche dynamique: Écrire négliger le mouvement horizontal+Vitesse uniforme (horizontale + temporelle)
-- Racourcir le carré violet
-- N-i -> N-30min
-- Slide 9: Dire qu'on met 10 jours pour descendre du sommet de la trop à 5km
-- Slide 10: Enlever
-- Slide 11: écrire cumulonimbus sans ascendance
-- Plus de ciel clair
-- Slide 12: Supprimer le tableau
-- à partir ... -> Sans considération microphysique
-- Ajouter 'à 5km sur les labels
-- Slie 13: Clarifier -> Changer légende en équation en indiquant les couleurs
-- Ajouter 'à 5km'
-- Slide 14: Schéma -> ajouter texte 'zone sèche', 'système mort', 'zone humide'
-- Slide 15: Ajouter stage de perspective
-- Souligner importance de la durée de vie des systèmes vs l'agrégation spatiale
-- La corrélation agrégation spatiale - humidité à réinterpréter -> systèmes plus gros, plus long.
-- Reste a confirmer avec les observations
-- Les autres données que la moyenne -> considérer la microphysique
+- Tic de language: 'Un peu'
+
+- Slide 10: Expliquer pq les zclouds sont plus bas
+
+- Slide 11: Sans considérations micro
+
+- Préciser cas organisé/désorganisé
 
 ## Introduction
 
@@ -49,12 +19,16 @@ title: Prédire l'humidité troposphérique en fonction de l'organisation
 
 - Organisation = comment les nuages se répartissent sur le domaine
 
-- Figure: vapeur d'eau intégrée verticalement $\rightarrow$ issue d'un modèle numérique simulant la convection profonde
+- Figure: vapeur d'eau intégrée verticalement $\rightarrow$ issue d'un modèle numérique simulant explicitement la convection profonde, juste illustration
 
-- **Transition** Utilisation de simulations $\rightarrow$ alimenter le modèle simple + vérifier les hypothèses du modèle et évaluer son réalisme.
+- differentes organisation -> cyclone + ldg = exemple de convection regroupée = agrégée
+
+- **Transition** Le modèle s'appuie sur les simulations, le but est de reproduire les effets de l'organisation simulé dans CRM
 
 ### Slide 2
 
+- **Montrer les éléments**
+  
 - **CRM:** Permet de simuler des nuages convectifs avec une résolution allant de la dizaine de mètre à plusieurs kilomètres sur un espace limité en 4D (temps+espace).
   
 - Simulations de 50 jours, pas de temps journalier, analyse des 10 derniers jours.
@@ -77,8 +51,6 @@ title: Prédire l'humidité troposphérique en fonction de l'organisation
 
   - Représenter l'ascendance de grande échelle $\rightarrow$ ajout d'un terme d'advection verticale d'humidité et de température.
 
-  - Les simulations en RCE avec CRM sont considérées comme réalistes
-
 ### Slide 3
 
 - **Obtention de différents types d'organisation:** On ajoute au RCE un forçage différent en fonction du type d'organisation que l'on veut favoriser
@@ -95,9 +67,13 @@ title: Prédire l'humidité troposphérique en fonction de l'organisation
 
 - Reproduction de l'assèchement de la troposphère par le CRM
 
+- Les simulations en RCE avec CRM sont considérées comme réalistes, permettent de reproduire l'assèchement en cohérence avec les obs
+
 ## Comment prédire les distributions de *RH*?
 
 ### Slide 4
+
+- **Montrer avec la souris**
 
 - 2 hypothèses sur comment l'organisation influence la $RH$
 

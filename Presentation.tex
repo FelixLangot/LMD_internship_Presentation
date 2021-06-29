@@ -3,6 +3,11 @@
 \usetheme[progressbar=frametitle]{metropolis}
 \usepackage{appendixnumberbeamer}
 
+\usepackage{amssymb}
+\usepackage{pifont}
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}
+
 \usepackage{booktabs}
 \usepackage[scale=2]{ccicons}
 
@@ -18,7 +23,7 @@
 \usepackage{subcaption}
 \usepackage[french]{babel}
 \usepackage{csquotes}
-\usepackage[backend=biber,style=authoryear,citestyle=authoryear]{biblatex}
+\usepackage[backend=biber,style=authoryear,citestyle=authoryear-comp]{biblatex}
 \usepackage{tikz}
 \usetikzlibrary{positioning}
 
@@ -30,6 +35,14 @@
    labelformat=underlcap,labelseparator=underlcap,textformat=underlcap}
    
 \newcommand\Wider[2][3em]{%
+\makebox[\linewidth][c]{%
+  \begin{minipage}{\dimexpr\textwidth+#1\relax}
+  \raggedright#2
+  \end{minipage}%
+  }%
+}
+
+\newcommand\WiderX[2][4em]{%
 \makebox[\linewidth][c]{%
   \begin{minipage}{\dimexpr\textwidth+#1\relax}
   \raggedright#2
@@ -67,11 +80,11 @@
 \title{Impact de l'organisation de la convection profonde sur l'humidité troposphérique}
 \subtitle{Félix Langot}
 \date{\today}
-\author{Supervisé par Dr. C. Risi \newline \textit{LMD - UVSQ/Paris-Saclay}}
+\author{Supervisé par C. Risi \newline \textit{LMD - UVSQ/Paris-Saclay}}
 \institute{\vspace{0.7cm}\includegraphics[width=4.5cm]{Figures/LMDSorbonne.png}\hfill\includegraphics[width=3.3cm]{/Users/felixlangot/Pictures/Icons/logo-uvsq-2020-actu.png}}
 
 \begin{document}
-{\usebackgroundtemplate{\tikz\node[opacity=0.2, anchor=center]{\includegraphics[width=21cm]{/Users/felixlangot/Google Drive (felixlangot@gmail.com)/UVSQ/Gestion de Projet/Poster/wallpaper2you_568686.jpg}};}
+{\usebackgroundtemplate{\tikz\node[opacity=0.3, anchor=center]{\includegraphics[width=21cm]{/Users/felixlangot/Google Drive (felixlangot@gmail.com)/UVSQ/Gestion de Projet/Poster/wallpaper2you_568686.jpg}};}
 % {\usebackgroundtemplate{\includegraphics{Figures/Flowers.jpeg}}
 \begin{frame}[plain,noframenumbering]
   \maketitle
@@ -85,17 +98,17 @@
     \vspace{0.2cm}
     \begin{itemize}
         \item Convection profonde = grands nuages, associés aux orages
-        \item Différents types d'organisation de la convection profonde
-        \item Organisation plus forte encouragée par réchauffement de SST
-        \item + d'organisation $\rightarrow$ assèchement de la troposphère
+        \item Différentes organisation de la convection profonde \autocite{houzeMesoscaleConvectiveSystems2004}
+        \item SST $\uparrow$: Organisation + forte \autocite{Khairoutdinov2010}
+        \item + d'organisation $\rightarrow$ assèchement de la troposphère \autocite{Tobin2012}
     \end{itemize}
     $\rightarrow$ Potentielle rétroaction climatique \\
-    \vspace{4cm}
+    \vspace{3.7cm}
     \begin{tikzpicture}[overlay, remember picture]
-        \node[above =1.6cm of current page.south]
+        \node[above =1.35cm of current page.south]
         {\includegraphics[width=12cm]{Figures/VisAssemble2.png}};
     \end{tikzpicture}
-    \textbf{But du stage:} développer un modèle théorique simple pour comprendre l'effet de l'organisation de la convection sur l'humidité de la troposphère 
+    \textbf{But du stage:} développer un modèle analytique simple pour comprendre l'effet de l'organisation de la convection sur l'humidité de la troposphère 
 }
 \end{frame}
 
@@ -118,7 +131,7 @@
 \textbf{Simulation en équilibre radiatif-convectif (RCE) avec le Cloud-Resolving  Model  (CRM) SAM:}
 \begin{figure}[hbtp]
     \centering
-    \includegraphics[width=8cm]{Figures/CRM.png}  
+    \includegraphics[width=10cm]{Figures/CRM.png}  
 \end{figure}
 }
 \end{frame}
@@ -126,11 +139,15 @@
 \begin{frame}{\secname}
 \Wider{
  \textbf{Simulation en équilibre radiatif-convectif (RCE) avec le Cloud-Resolving  Model  (CRM) SAM:}
- \vspace{-0.5cm}
+}
+\WiderX{
+ \vspace{0.2cm}
 \begin{figure}[hbtp]
-    \centering
+    \raggedright
     \includegraphics[width=12cm]{Figures/TableExp.png}  
 \end{figure}
+}
+\Wider{
 \begin{columns}
     \column{0.4\textwidth}
     $$RH_{a} = \left. \ \frac{q_{v}}{q_{sat}} \right|_{z_{parcel} = 5km}$$ 
@@ -172,7 +189,7 @@
     \begin{itemize}
         \setlength{\itemsep}{4pt}
         \item \textbf{Approche statique:} L'altitude de dernière saturation d'une parcelle troposphérique correspond à l'altitude du nuage le plus proche au-dessus de la parcelle.
-        \item SAM: $q_c + q_i > 10^{-6}$ alors le point de grille est dans un nuage \autocite{thayer-calderNumericalInvestigationBoundary2015}
+        \item SAM: $q_c + q_i > 10^{-6}$g/kg alors le point de grille est dans un nuage \autocite{thayer-calderNumericalInvestigationBoundary2015}
     \end{itemize}
 }
 \begin{figure}[hbtp]
@@ -182,7 +199,7 @@
 \end{frame}
 
 \begin{frame}{\secname}
-    Altitude du nuage le plus proche de chaque point de grille à chaque pas de temps des simulations:
+    Altitude du nuage le plus proche de chaque point de grille à chaque pas de temps (simulation cumulonimbus):
     \begin{figure}[hbtp]
         \centering
         \includegraphics[width=10cm]{../Codes/Figs/3Dclouds.png}
@@ -193,12 +210,11 @@
 \Wider{
 \begin{figure}[hbtp]
     \centering
-    \includegraphics[width=7cm]{../Codes/Figs/meanRHpovsRHa.png} \hfill
-    \includegraphics[width=4.5cm]{Figures/Table1.png}
+    \includegraphics[width=7cm]{../Codes/Figs/meanRHpovsRHa.png}
 \end{figure}
 \vspace{0.2cm}
 $\rightarrow$ La $RH$ ne peut pas être prédite par un modèle statique \\ 
-$\rightarrow$ Intermittence des nuages + mouvement de la parcelle importants.
+$\rightarrow$ Intermittence des nuages + mouvement des parcelles important.
 }
 \end{frame}
 
@@ -206,10 +222,10 @@ $\rightarrow$ Intermittence des nuages + mouvement de la parcelle importants.
 
 \begin{frame}{\secname}
 \Wider{
-\textbf{Approche dynamique:} On considère le mouvement vertical d'une parcelle au-dessus de la troposphère.
+\textbf{Approche dynamique:} \cmark ~mouvement vertical des parcelles, \xmark ~mouvement horizontal, \xmark ~variations en ($x,y,t$) de la vitesse verticale
 \vspace{-0.5cm}
 \begin{block}{\vspace*{-2.5ex}}
-$\rightarrow$ L'altitude de dernière saturation $z_{clouds}$ d'une parcelle à $z_{parcel} =$ 5km au pas de temps $t_N$ est l'altitude à laquelle elle a rencontré un nuage pour la dernière fois le long de sa trajectoire à $t_{N-i}$. 
+$\rightarrow$ L'altitude de dernière saturation d'une parcelle à 5km est l'altitude à laquelle elle a rencontré un nuage pour la dernière fois le long de sa trajectoire. 
 \end{block}
 \begin{figure}[hbtp]
     \centering
@@ -221,7 +237,7 @@ $\rightarrow$ L'altitude de dernière saturation $z_{clouds}$ d'une parcelle à 
 \begin{frame}{\secname}
     \begin{itemize}
         \item SAM $\rightarrow w(t,x,y,z) \rightarrow w_{env}(z)$     
-        \item Simulations avec ascendance: $w_{tot} = w_{env} + w_{LS}$, où $w_{LS}$ est l'ascendance imposée.
+        \item Temps descente des parcelles $\sim$ 10 jours
     \end{itemize} 
     \begin{figure}[hbtp]
         \centering
@@ -229,19 +245,20 @@ $\rightarrow$ L'altitude de dernière saturation $z_{clouds}$ d'une parcelle à 
     \end{figure}
 \end{frame}
 
-\begin{frame}{\secname}
-    \begin{itemize}
-        \item Pas de temps simulation = 30min
-        \item On trace la trajectoire de la parcelle, gouvernée par $w_{tot}$.
-    \end{itemize}
-    \begin{figure}[hbtp]
-        \centering
-        \includegraphics[width=8.5cm]{../Codes/Figs2/ztraj.png}
-    \end{figure}
-\end{frame}
+% \begin{frame}{\secname}
+%     \begin{itemize}
+%         \item Pas de temps simulation = 30min
+%         \item On trace la trajectoire de la parcelle, gouvernée par $w_{tot}$.
+%     \end{itemize}
+%     \begin{figure}[hbtp]
+%         \centering
+%         \includegraphics[width=8.5cm]{../Codes/Figs2/ztraj.png}
+%     \end{figure}
+% \end{frame}
 
 \begin{frame}{\secname}
-    En utilisant les mêmes conditions pour détecter les nuages, on obtient les altitudes de dernières saturations suivantes:
+    En utilisant les mêmes conditions pour détecter les nuages, on obtient les altitudes de dernières saturations suivantes (simulation cumulonimbus):
+    \vspace{-0.25cm}
     \begin{figure}[hbtp]
         \centering
         \includegraphics[width=10cm]{../Codes/Figs2/zclouds_traj.png}
@@ -254,12 +271,11 @@ $\rightarrow$ L'altitude de dernière saturation $z_{clouds}$ d'une parcelle à 
 \Wider{
 \begin{figure}[hbtp]
     \centering
-    \includegraphics[width=7cm]{../Codes/Figs/meanRHpvsRHa.png} \hfill
-    \includegraphics[width=4.5cm]{Figures/Table2.png}
+    \includegraphics[width=7cm]{../Codes/Figs/meanRHpvsRHa.png}
 \end{figure}
 \vspace{0.1cm}
 $\rightarrow \overline{RH}$ prédite par le modèle AC correspond à $\overline{RH}$ du CRM \\
-$\rightarrow$ hypothèse valide: $\overline{RH}$ prédite à partir de la dynamique seulement.
+$\rightarrow$ hypothèse valide: $\overline{RH}$ prédite sans considérer la microphysique.
 }
 \end{frame}
 
@@ -275,6 +291,7 @@ On utilise la simplicité du modèle AC pour décortiquer les différences d'hum
 
 \section*{Conclusion}
 \begin{frame}{\secname}
+\vspace{-0.1cm}
 \Wider{
 \begin{block}{\vspace{-2.5ex}}
     L'assèchement moyen de la troposphère avec l'organisation est prédit avec un modèle sans considérations microphysiques
@@ -284,9 +301,22 @@ On utilise la simplicité du modèle AC pour décortiquer les différences d'hum
 \begin{block}{\vspace{-2.5ex}}
     Le changement d'intermittence des nuages est le principal facteur d'assèchement de la troposphère
 \end{block}
+\vspace{0.1cm}
 \centering
-\includegraphics[width=8cm]{Figures/SchémaBilan.png}
+\includegraphics[width=11cm]{Figures/SchémaBilan.png}
 }
+\end{frame}
+
+\section*{Perspectives}
+\begin{frame}{\secname}
+\begin{itemize}
+    \setlength\itemsep{7pt}
+    \item Importance de la durée de vie des systèmes vs agrégation spatiale
+    \item Réinterprétation de la corrélation agrégation spatiale/humidité $\rightarrow$ systèmes + gros = + grande durée de vie
+    \item À confirmer avec les observations
+    \item Étendre l'expérience sur toute la troposphère
+    \item Prédictions des moments d'ordre supérieur de $RH_p \rightarrow$ considérer la microphysique?
+\end{itemize}
 \end{frame}
 
 {\usebackgroundtemplate{\tikz\node[opacity=0.2]{\includegraphics[width=21cm]{/Users/felixlangot/Google Drive (felixlangot@gmail.com)/UVSQ/Gestion de Projet/Poster/wallpaper2you_568686.jpg}};}
@@ -296,6 +326,7 @@ On utilise la simplicité du modèle AC pour décortiquer les différences d'hum
   \textcolor{black}{Merci pour votre attention!}
 \end{frame}
 }
+
 
 \section*{Influence du pas de temps}
 
