@@ -2,9 +2,18 @@
 
 Titre: Je vous remercie de me donner l'opportunité de vous exposer ma candidature
 
-Slide 1: Plus que curiosité sur la géophysique -> envie d'en faire son métier
+Profil:
 
-**Transition**: M2 ECLAT: introduction à différentes problématiques autour du climat + stage. Insister sur deux expériences de recherche
+- Titulaire d'un master de physique de l'UoB, Étudiant M2 ECLAT
+- Envie de faire de la recherche dans le développement/utilisation de méthodes informatiques innovantes pour les problèmes environnementaux.
+- Intérêt développé durant les études
+- J'aime travailler en équipe/ la collaboration internationale
+- Rigoureux: Nombreux projets informatiques notés nécessitant une forte rigueur dans l'écriture des codes.
+
+Slide 1: MSci -> apprentissage de l'informatique
+          M2 -> Application au climat, développement d'un premier modèle
+
+**Transition**: M2 ECLAT: introduction à différentes problématiques autour du climat + stage. Insister sur deux expériences de recherche.
 
 ## Expérience de recherche
 
@@ -26,10 +35,11 @@ Slide 1: Plus que curiosité sur la géophysique -> envie d'en faire son métier
   - Graph du bas: Commencer par expliquer les barres bleues
   - Barres grises: propriétés spatiales des nuages, vitesse verticale sur le domaine, persistence des nuages dans le temps.
   - Conclusion physique: On peut simuler l'assèchement troposphérique sans microphysique + Intermittence/persistance primordiale dans l'assèchement
+  
+<!-- 
+**Transition** Sujet de stage/sujet de thèse: Envie de continuer de travailler sur les phénomènes physiques liés à l'organisation de la convection, intéressé par la modélisation à haute résolution. -->
 
-**Transition** Sujet de stage/sujet de thèse: Envie de continuer de travailler sur les phénomènes physiques liés à l'organisation de la convection, intéressé par la modélisation à haute résolution.
-
-## Description du projet de thèse
+<!-- ## Description du projet de thèse
 
 **Contexte:**
 
@@ -49,7 +59,7 @@ Slide 1: Plus que curiosité sur la géophysique -> envie d'en faire son métier
 
 - Analyse par simulations haute-résolution résolvant les processus de fine échelle
 
-- Finir en mettant l'accent sur la motivation
+- Finir en mettant l'accent sur la motivation -->
 
 ## Préparation question
 
